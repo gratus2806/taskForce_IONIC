@@ -1,0 +1,87 @@
+
+
+.bg-color{
+    background-image: linear-gradient(to bottom, #f7f7f7 , rgb(255, 255, 255));
+    
+}
+
+
+.about{
+cursor: pointer;
+height: 100%;
+background-color: #8cddfb;
+color: #FFFFFF;
+padding-top: 20px;
+padding-bottom: 30px;
+}
+.logo{
+width: 30%;
+margin: 0 auto;
+}
+.about h1 {
+padding: 10px 0;
+margin-bottom: 20px;
+}
+.about h2 {
+opacity: .8;
+}
+// .about span {
+// 	display: block;
+// 	width: 100px;
+// 	height: 100px;
+// 	line-height: 100px;
+// 	margin:auto;
+// 	border-radius:50%;  
+// 	font-size: 40px;
+// 	color: #FFFFFF;
+// 	// opacity: 0.7;
+// 	background-color: #4C0822;
+// 	border: 2px solid #4C0822;
+
+// 	// webkit-transition:all .5s ease;
+//  	// moz-transition:all .5s ease;
+//  	// os-transition:all .5s ease;
+//  	// transition:all .5s ease;
+
+// }
+.about-item:hover span{
+opacity: 1;	
+border: 2px solid #CC0039;
+font-size: 42px;
+-webkit-transform: scale(1.1,1.1) rotate(360deg) ;
+-moz-transform: scale(1.1,1.1) rotate(360deg) ;
+-o-transform: scale(1.1,1.1) rotate(360deg) ;
+transform: scale(1.1,1.1) rotate(360deg) ;
+}
+.about-item:hover h2{
+opacity: 1;
+-webkit-transform: scale(1.1,1.1)  ;
+-moz-transform: scale(1.1,1.1)  ;
+-o-transform: scale(1.1,1.1)  ;
+transform: scale(1.1,1.1) ;
+}
+.lead_header{
+color: #CC0039;
+font-weight: bold;
+
+}
+.about .lead{
+color: #CC0039;
+font-size: 15px;
+font-weight: bold;
+// text-align: left;
+}
+.alert-wrapper {
+background: #e5e5e5;
+}
+
+/* Works - pass "my-custom-class" in cssClass to increase specificity */
+.my-custom-class .alert-wrapper {
+background: #e5e5e5;
+}
+.call_icon_style{
+height: 42px;
+width: 35px;
+}
+
+

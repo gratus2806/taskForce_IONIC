@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="font-weight: 700;text-align: center;">Task Force </ion-title>
+    <ion-buttons slot="end">
+    <ion-icon size="large" (click)="logout()"  name="log-out"></ion-icon>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-tabs >
+  <ion-tab-bar slot='bottom' >
+
+    <ion-tab-button tab='home' >
+      <ion-icon name='home'></ion-icon>
+      <ion-lable>Home</ion-lable>
+    </ion-tab-button>
+
+    <ion-tab-button tab='taskforce'>
+      <ion-icon name='people'></ion-icon>
+      <ion-lable>Task Force</ion-lable>
+    </ion-tab-button>
+
+    <ion-tab-button tab='doctor-info'>
+      <ion-icon name="medkit"></ion-icon>
+      <ion-lable>Dr.Details</ion-lable>
+    </ion-tab-button>
+
+    <ion-tab-button tab='contactus'>
+      <ion-icon name="bookmark"></ion-icon>
+      <ion-lable>Contact Us</ion-lable>
+    </ion-tab-button>
+
+    <!-- <ion-tab-button tab='about'>
+      <ion-icon name='book'></ion-icon>
+      <ion-lable>AboutUs</ion-lable>
+    </ion-tab-button> -->
+  </ion-tab-bar>
+</ion-tabs>
+
+

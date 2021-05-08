@@ -1,0 +1,124 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons >
+    <ion-title>NomadLord </ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <!-- *******************Alert Box **********************-->
+  <div class="container h-100 bg_colour" >
+		<div class="alert alert-danger" role="alert" *ngIf="passMissMatch">
+			Password MissMatched try Again...
+	  	</div>
+		<div class="alert alert-danger" role="alert" *ngIf="userDetailMissMatch">
+			Authentication issue try again...
+	  	</div>
+		<div class="d-flex justify-content-center h-100">
+			<!-- ***********************************Login************************** -->
+			<div class="user_card" *ngIf="loginFormDiv">
+				<div class="d-flex justify-content-center">
+					<div class="brand_logo_container">
+						<img src="../../../assets/taskforce_logo.png" class="brand_logo" alt="Logo">
+					</div>
+				</div>
+				<div class="d-flex justify-content-center form_container">
+					<form  [formGroup]="loginForm" (ngSubmit)="onSubmitLoginForm()" >
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input type="number"  class="form-control input_user"  formControlName="userPhone" placeholder="Phone No." required>
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input type="password"  class="form-control input_pass" formControlName="password" placeholder="Password" required>
+						</div>
+						<!-- <div class="form-group">
+							<div class="custom-control custom-checkbox">
+                <label class="custom-control-label" for="customControlInline">Remember me</label>
+								<input type="checkbox" class="custom-control-input" formControlName="rememberMe" id="customControlInline">
+								
+							</div>
+						</div> -->
+							<div class="d-flex justify-content-center mt-3 login_container">
+				 	<button type="submit" name="button" class="btn login_btn">Login</button>
+				   </div>
+					</form>
+				</div>
+		
+				<div class="mt-4">
+					<div class="d-flex justify-content-center links">
+						Don't have an account? <a (click)="showRegisterFormDiv()"  class="ml-2 color_signup" style="color: #005cff;" >Sign Up</a>
+					</div>
+					<!-- <div class="d-flex justify-content-center links color_signup">
+						<a href="#">Forgot your password?</a>
+					</div> -->
+				</div>
+			</div>
+
+			<!-- **************************REgiste******************************* -->
+			<div class="user_card_reg" *ngIf="registerFormDiv">
+				<div class="d-flex justify-content-center">
+					<div class="brand_logo_container">
+						<img src="../../../assets/taskforce_logo.png" class="brand_logo" alt="Logo">
+					</div>
+				</div>
+				<div class="d-flex justify-content-center form_container">
+					<form  [formGroup]="registerForm" (ngSubmit)="onSubmitRegisterForm()" >
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input type="text"  class="form-control input_user"  style="text-transform:uppercase"  formControlName="userFullName" placeholder="Full Name" required>
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fa fa-phone"></i></span>
+							</div>
+							<input type="number"  class="form-control input_pass" formControlName="userPhoneNumber" placeholder="Mobile No." required>
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input type="password"  class="form-control input_pass" formControlName="userPassword" placeholder="password" required>
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input type="password"  class="form-control input_pass" formControlName="confirmUserPassword" placeholder="Confirm Password" required>
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fa fa-address-book"></i></span>
+							</div>
+							<input type="text"  class="form-control input_pass"  style="text-transform:uppercase" formControlName="userVillage" placeholder="Village Name" required>
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fa fa-home"></i></span>
+							</div>
+							<input type="text"  class="form-control input_pass"  style="text-transform:uppercase" formControlName="userParish" placeholder="Parish Name" required>
+						</div>
+						<div class="d-flex justify-content-center mt-3 login_container">
+				 			<button type="submit" name="button" class="btn login_btn">SignUp</button>
+				   		</div>
+						<div class="mt-4">
+							<div class="d-flex justify-content-center links" style="color: blue;">
+								 <a (click)="nevigateToLogin()"  class="ml-2 color_signup" >Back to login..!</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+  
+</ion-content>

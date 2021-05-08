@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>NomadLord </ion-title>
+    <ion-buttons slot="end">
+    <ion-icon size="large"  name="cart-outline"></ion-icon>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content fullscreen="true">
+  <div class="container h-100 bg_colour">
+    <div class="alert alert-success" role="alert" *ngIf="msgSuccessful">
+			Message Send Successfully...!
+	  	</div>
+    <div class="d-flex justify-content-center h-100">
+      <div class="user_card">
+        <form id="contactus" [formGroup]="contactForm" (ngSubmit)="onSubmitContactForm()">
+          <h3>Contact Task Force</h3>
+          <fieldset> 
+            <ion-item >
+              <ion-label>Contact list</ion-label>
+              <ion-select (ionChange)="checkValue($event)" >
+                <ion-select-option   *ngFor="let state of states" [value]="state.phoneNo"  >{{state.name}}</ion-select-option>
+              </ion-select>
+            </ion-item> 
+            <!-- <ion-option  value="{{thana_list.id}}" [selected]="thana_list.id == owner_list.thana" *ngFor="let thana_list of thanaData">{{thana_list.name}}</ion-option> -->
+          <!-- <ion-select formControlName="state">
+            <ion-option *ngFor="let state of states" [value]="state">{{state}}</ion-option>
+          </ion-select> -->
+          </fieldset>
+          <fieldset> <textarea placeholder="Type your message here..." tabindex="5" formControlName="userMessage" required></textarea> </fieldset>
+          <fieldset> <button name="submit" type="submit" id="contactus-submit" data-submit="...Sending">Send Now</button> </fieldset>
+        </form>
+      </div>
+    </div>
+   
+</div>
+</ion-content>
+

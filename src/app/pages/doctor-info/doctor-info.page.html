@@ -1,0 +1,119 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Task Force </ion-title>
+    <ion-buttons slot="end">
+    <ion-icon size="large"  name="cart-outline"></ion-icon>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true" >
+  <section class="text-center about bg-color ">
+
+    <div class="container ">
+      <div class="row ">
+        <div class="col-lg-12 col-sm-12 col-ex-12 about-item wow lightSpeedIn bg-color fill"  data-wow-offset="200" >
+          <h1 class="lead_header">⛑️ मध्यवर्ती रुग्णालय ⛑️</h1>
+          <ion-card style="background-color: #98ff94;">
+            <ion-card-content>
+              <p class="lead" (click)="emergencyDetails()"> आणीबाणी(Emergency) फोन नंबर <i class="fa fa-chevron-circle-down" style="padding-left: 15px;font-size: 1.28rem;" aria-hidden="true"></i></p>
+            </ion-card-content>
+          </ion-card>
+          
+          <div *ngIf="doctorDiv" style=" margin-bottom: 85px;    padding-bottom: 49px;">
+              <h1 class="lead_header" style="margin: 0;
+              padding: 5px;">Doctor</h1>
+              <ion-card *ngFor="let doctors of doctor; let i = index" >
+                  <ion-card-content>
+                      <ion-row>
+                          <ion-col size="2">
+                              <ion-icon class="call_icon_style" (click)='chat(doctors.phoneNo)' name='chatbubbles' ></ion-icon>
+                          </ion-col>
+                          <ion-col size="8">
+                              <p class="lead">{{doctors.name}}</p>
+                              <p class="lead">{{doctors.phoneNo}}</p>
+                          </ion-col>
+                          <ion-col size="2">
+                              <ion-icon class="call_icon_style" (click)='call(doctors.phoneNo)' name='call'></ion-icon>
+                          </ion-col>
+                      </ion-row>
+                  </ion-card-content>
+              </ion-card>
+          </div>
+
+          <div *ngIf="bloodBankDiv" style=" margin-bottom: 85px;    padding-bottom: 49px;">
+            <h1 class="lead_header" style="margin: 0;
+            padding: 5px;">Blood Bank</h1>
+            <ion-card *ngFor="let bloodBanks of bloodBank; let i = index" >
+                <ion-card-content>
+                    <ion-row>
+                        <ion-col size="2">
+                            <ion-icon class="call_icon_style" (click)='chat(bloodBanks.phoneNo)' name='chatbubbles' ></ion-icon>
+                        </ion-col>
+                        <ion-col size="8">
+                            <p class="lead">{{bloodBanks.name}}</p>
+                            <p class="lead">{{bloodBanks.phoneNo}}</p>
+                        </ion-col>
+                        <ion-col size="2">
+                            <ion-icon class="call_icon_style" (click)='call(bloodBanks.phoneNo)' name='call'></ion-icon>
+                        </ion-col>
+                    </ion-row>
+                </ion-card-content>
+            </ion-card>
+        </div>
+        <div *ngIf="ambulenceDiv" style="    margin-bottom: 85px;    padding-bottom: 49px;">
+          <h1 class="lead_header" style="margin: 0;
+          padding: 5px;">Ambulance</h1>
+          <ion-card *ngFor="let ambulances of ambulance; let i = index" >
+              <ion-card-content>
+                  <ion-row>
+                      <ion-col size="2">
+                          <ion-icon class="call_icon_style" (click)='chat(ambulances.phoneNo)' name='chatbubbles' ></ion-icon>
+                      </ion-col>
+                      <ion-col size="8">
+                          <p class="lead">{{ambulances.name}}</p>
+                          <p class="lead">{{ambulances.phoneNo}}</p>
+                      </ion-col>
+                      <ion-col size="2">
+                          <ion-icon class="call_icon_style" (click)='call(ambulances.phoneNo)' name='call'></ion-icon>
+                      </ion-col>
+                  </ion-row>
+              </ion-card-content>
+          </ion-card>
+        </div>
+        <div *ngIf="covidTestDiv" style="    margin-bottom: 85px;">
+          <h1 class="lead_header" style="margin: 0;
+          padding: 5px;">Covit-19 Test</h1>
+          <ion-card *ngFor="let  covidTests of  covidTest; let i = index" >
+              <ion-card-content>
+                  <ion-row>
+                      <ion-col size="2">
+                          <ion-icon class="call_icon_style" (click)='chat( covidTests.phoneNo)' name='chatbubbles' ></ion-icon>
+                      </ion-col>
+                      <ion-col size="8">
+                          <p class="lead">{{ covidTests.name}}</p>
+                          <p class="lead">{{ covidTests.phoneNo}}</p>
+                      </ion-col>
+                      <ion-col size="2">
+                          <ion-icon class="call_icon_style" (click)='call( covidTests.phoneNo)' name='call'></ion-icon>
+                      </ion-col>
+                  </ion-row>
+              </ion-card-content>
+          </ion-card>
+      </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</ion-content>
+
+  
+
+
+
+
+

@@ -1,0 +1,7 @@
+{
+  "name": "TaskForce",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

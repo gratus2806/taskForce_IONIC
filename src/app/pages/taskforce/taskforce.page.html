@@ -1,0 +1,312 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Task Force </ion-title>
+    <ion-buttons slot="end">
+    <ion-icon size="large"  name="cart-outline"></ion-icon>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <section class="text-center about bg-color">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-sm-12 col-ex-12 about-item wow lightSpeedIn "  data-wow-offset="200" >
+          <h1 class="lead_header">⛑️मध्यवर्ती टास्क फोर्स⛑️</h1>
+          <ion-card style="background-color: #98ff94;">
+            <ion-card-content>
+              <p class="lead" (click)="presentAlertRadio()">धर्मग्राम पातळीवरील प्रतिनिधी <i class="fa fa-chevron-circle-down" style="padding-left: 15px;font-size: 1.28rem;" aria-hidden="true"></i></p>
+            </ion-card-content>
+          </ion-card>
+          
+         <div *ngIf="nandakhalDiv">
+          <h1 class="lead_header" style="margin: 0;
+          padding: 5px;">नंदाखाल</h1>
+          
+          <ion-card *ngFor="let nandakhals of nandakhal; let i = index" >
+            <ion-card-content>
+              <ion-row>
+                <ion-col size="2">
+                  <ion-icon class="call_icon_style" (click)='chat(nandakhals.phoneNo)' name='chatbubbles' ></ion-icon>
+                </ion-col>
+                <ion-col size="8">
+                  <p class="lead">{{nandakhals.name}}</p>
+                  <p class="lead">{{nandakhals.phoneNo}}</p>
+                </ion-col>
+                <ion-col size="2">
+                  <ion-icon class="call_icon_style" (click)='call(nandakhals.phoneNo)' name='call'></ion-icon>
+                </ion-col>
+
+              </ion-row>
+              
+            </ion-card-content>
+          </ion-card>
+          <!-- <ion-card>
+            <ion-card-content>
+              <p class="lead">श्री.रॉजर रॉड्रिग्ज</p>
+              <p class="lead">9324640909</p>
+            </ion-card-content>
+          </ion-card>
+          <ion-card>
+            <ion-card-content>
+              <p class="lead">श्री.ऑलीसन तुस्कानो</p>
+              <p class="lead">8149842464</p>
+            </ion-card-content>
+          </ion-card> -->
+        </div>
+        <div *ngIf="agashiDiv">
+          <h1 class="lead_header" style="margin: 0;
+          padding: 5px;">आगाशी</h1>
+          <ion-card *ngFor="let agashis of agashi; let i = index"  >
+            <ion-card-content>
+              <ion-row>
+                <ion-col size="2">
+                  <ion-icon class="call_icon_style" (click)='chat(agashis.phoneNo)'  name='chatbubbles' ></ion-icon>
+                </ion-col>
+                <ion-col size="8">
+              <p class="lead">{{agashis.name}}</p>
+              <p class="lead">{{agashis.phoneNo}}</p>
+            </ion-col>
+            <ion-col size="2">
+              <ion-icon class="call_icon_style" (click)='call(agashis.phoneNo)' name='call'></ion-icon>
+            </ion-col>
+
+          </ion-row>
+            </ion-card-content>
+          </ion-card>
+        </div>
+        <div *ngIf="sherlaiDiv">
+          <h1 class="lead_header" style="margin: 0;
+          padding: 5px;"> शिर्लय</h1>
+          <ion-card *ngFor="let sherlais of sherlai; let i = index"  >
+            <ion-card-content>
+              <ion-row>
+                <ion-col size="2">
+                  <ion-icon class="call_icon_style" (click)='chat(sherlais.phoneNo)' name='chatbubbles' ></ion-icon>
+                </ion-col>
+                <ion-col size="8">
+              <p class="lead">{{sherlais.name}}</p>
+              <p class="lead">{{sherlais.phoneNo}}</p>
+            </ion-col>
+            <ion-col size="2">
+              <ion-icon class="call_icon_style" (click)='call(sherlais.phoneNo)'  name='call'></ion-icon>
+            </ion-col>
+
+          </ion-row>
+            </ion-card-content>
+          </ion-card>
+        </div>
+        <div *ngIf="rajodiDiv">
+          <h1 class="lead_header" style="margin: 0;
+          padding: 5px;"> राजोडी</h1>
+           <ion-card *ngFor="let rajodis of rajodi; let i = index"  >
+            <ion-card-content>
+              <ion-row>
+                <ion-col size="2">
+                  <ion-icon class="call_icon_style" (click)='chat(rajodis.phoneNo)' name='chatbubbles' ></ion-icon>
+                </ion-col>
+                <ion-col size="8">
+              <p class="lead">{{rajodis.name}}</p>
+              <p class="lead">{{rajodis.phoneNo}}</p>
+            </ion-col>
+            <ion-col size="2">
+              <ion-icon class="call_icon_style" (click)='call(rajodis.phoneNo)' name='call'></ion-icon>
+            </ion-col>
+
+          </ion-row>
+            </ion-card-content>
+          </ion-card>
+        </div>
+        <div *ngIf="nanbhatDiv" style=" margin-bottom: 85px;    padding-bottom: 49px;">
+          <h1 class="lead_header" style="margin: 0;
+          padding: 5px;"> नानभाट</h1>
+          <ion-card *ngFor="let nanbhats of nanbhat; let i = index"  >
+            <ion-card-content>
+              <ion-row>
+                <ion-col size="2">
+                  <ion-icon class="call_icon_style" (click)='chat(nanbhats.phoneNo)' name='chatbubbles' ></ion-icon>
+                </ion-col>
+                <ion-col size="8">
+              <p class="lead">{{nanbhats.name}}</p>
+              <p class="lead">{{nanbhats.phoneNo}}</p>
+            </ion-col>
+            <ion-col size="2">
+              <ion-icon class="call_icon_style" (click)='call(nanbhats.phoneNo)' name='call'></ion-icon>
+            </ion-col>
+
+          </ion-row>
+            </ion-card-content>
+          </ion-card>
+        </div> 
+        <div *ngIf="bolinjDiv">
+          <h1 class="lead_header" style="margin: 0;
+          padding: 5px;"> बोळींज</h1>
+           <ion-card *ngFor="let bolinjs of bolinj; let i = index"  >
+            <ion-card-content>
+              <ion-row>
+                <ion-col size="2">
+                  <ion-icon class="call_icon_style" (click)='chat(bolinjs.phoneNo)' name='chatbubbles' ></ion-icon>
+                </ion-col>
+                <ion-col size="8">
+              <p class="lead">{{bolinjs.name}}</p>
+              <p class="lead">{{bolinjs.phoneNo}}</p>
+            </ion-col>
+            <ion-col size="2">
+              <ion-icon class="call_icon_style" (click)='call(bolinjs.phoneNo)' name='call'></ion-icon>
+            </ion-col>
+
+          </ion-row>
+            </ion-card-content>
+          </ion-card>
+        </div>
+
+        <div *ngIf="umraleDiv">
+          <h1 class="lead_header" style="margin: 0;
+          padding: 5px;">उमराळे</h1>
+         <ion-card *ngFor="let umrales of umrale; let i = index"  >
+          <ion-card-content>
+            <ion-row>
+              <ion-col size="2">
+                <ion-icon class="call_icon_style" (click)='chat(umrales.phoneNo)' name='chatbubbles' ></ion-icon>
+              </ion-col>
+              <ion-col size="8">
+            <p class="lead">{{umrales.name}}</p>
+            <p class="lead">{{umrales.phoneNo}}</p>
+          </ion-col>
+          <ion-col size="2">
+            <ion-icon class="call_icon_style" (click)='call(umrales.phoneNo)' name='call'></ion-icon>
+          </ion-col>
+
+        </ion-row>
+          </ion-card-content>
+        </ion-card>
+        </div>  
+        <div *ngIf="mardesDiv">
+          <h1 class="lead_header" style="margin: 0;
+          padding: 5px;">मर्देस</h1>
+         <ion-card *ngFor="let mardess of mardes; let i = index"  >
+          <ion-card-content>
+            <ion-row>
+              <ion-col size="2">
+                <ion-icon class="call_icon_style" (click)='chat(mardess.phoneNo)' name='chatbubbles' ></ion-icon>
+              </ion-col>
+              <ion-col size="8">
+            <p class="lead">{{mardess.name}}</p>
+            <p class="lead">{{mardess.phoneNo}}</p>
+          </ion-col>
+          <ion-col size="2">
+            <ion-icon class="call_icon_style" (click)='call(mardess.phoneNo)' name='call'></ion-icon>
+          </ion-col>
+
+        </ion-row>
+          </ion-card-content>
+        </ion-card>
+        </div>
+        <div *ngIf="gomesaliDiv">
+          <h1 class="lead_header" style="margin: 0;
+          padding: 5px;">गोम्सआळी परिसर</h1>
+         <ion-card *ngFor="let gomasalis of gomasali; let i = index"  >
+          <ion-card-content>
+            <ion-row>
+              <ion-col size="2">
+                <ion-icon class="call_icon_style" (click)='chat(gomasalis.phoneNo)' name='chatbubbles' ></ion-icon>
+              </ion-col>
+              <ion-col size="8">
+            <p class="lead">{{gomasalis.name}}</p>
+            <p class="lead">{{gomasalis.phoneNo}}</p>
+          </ion-col>
+          <ion-col size="2">
+            <ion-icon class="call_icon_style" (click)='call(gomasalis.phoneNo)' name='call'></ion-icon>
+          </ion-col>
+
+        </ion-row>
+          </ion-card-content>
+        </ion-card>
+        </div>  
+        <div *ngIf="gassDiv">
+          <h1 class="lead_header" style="margin: 0;
+          padding: 5px;">गास</h1>
+           <ion-card *ngFor="let gasss of gass; let i = index"  >
+            <ion-card-content>
+              <ion-row>
+                <ion-col size="2">
+                  <ion-icon class="call_icon_style" (click)='chat(gasss.phoneNo)' name='chatbubbles' ></ion-icon>
+                </ion-col>
+                <ion-col size="8">
+              <p class="lead">{{gasss.name}}</p>
+              <p class="lead">{{gasss.phoneNo}}</p>
+            </ion-col>
+            <ion-col size="2">
+              <ion-icon class="call_icon_style" (click)='call(gasss.phoneNo)' name='call'></ion-icon>
+            </ion-col>
+  
+          </ion-row>
+            </ion-card-content>
+          </ion-card>
+        </div>
+        <div *ngIf="nirmalDiv">
+          <h1 class="lead_header" style="margin: 0;
+          padding: 5px;">निर्मळ</h1>
+         <ion-card *ngFor="let nirmals of nirmal; let i = index"  >
+          <ion-card-content>
+            <ion-row>
+              <ion-col size="2">
+                <ion-icon class="call_icon_style" (click)='chat(nirmals.phoneNo)' name='chatbubbles' ></ion-icon>
+              </ion-col>
+              <ion-col size="8">
+            <p class="lead">{{nirmals.name}}</p>
+            <p class="lead">{{nirmals.phoneNo}}</p>
+          </ion-col>
+          <ion-col size="2">
+            <ion-icon class="call_icon_style" (click)='call(nirmals.phoneNo)' name='call'></ion-icon>
+          </ion-col>
+
+        </ion-row>
+          </ion-card-content>
+        </ion-card>
+        </div>  
+        <div *ngIf="bhaugaonDiv">
+          <h1 class="lead_header" style="margin: 0;
+          padding: 5px;">भुईगाव</h1>
+           <ion-card *ngFor="let bhaugaons of bhaugaon; let i = index"  >
+            <ion-card-content>
+              <ion-row>
+                <ion-col size="2">
+                  <ion-icon class="call_icon_style" (click)='chat(bhaugaons.phoneNo)' name='chatbubbles' ></ion-icon>
+                </ion-col>
+                <ion-col size="8">
+              <p class="lead">{{bhaugaons.name}}</p>
+              <p class="lead">{{bhaugaons.phoneNo}}</p>
+            </ion-col>
+            <ion-col size="2">
+              <ion-icon class="call_icon_style" (click)='call(bhaugaons.phoneNo)' name='call'></ion-icon>
+            </ion-col>
+  
+          </ion-row>
+            </ion-card-content>
+          </ion-card>
+        </div>
+          
+          
+          
+          
+          <!-- <p class="lead">आपण सर्वच जण कोविड १९ या आजाराच्या दुसऱ्या लाटेत आलेलो आहोत. तज्ज्ञांच्या म्हणण्यानुसार हि लाट नसून त्सुनामी आहे, आणि आपण त्याचा अनुभव घेत आहोत. निदान वसईपुरता विचार करायचा झाल्यास वसईतील सर्वच हॉपिटल्स खचाखच भरलेली आहेत. रेमिडीसीवर इंजेक्शनचा भयंकर तुटवडा निर्माण झाला आहे. ऑक्सिजन मिळत नाही. एकंदर आरोग्य व्यवस्था संपूर्ण पणे कोलमडून गेली आहे. अशा वेळी रेमिडीसीवर इंजेक्शन किंवा हॉस्पिटल मध्ये भरती करणं हे केवळ अशक्य झालेलं आहे. आपण सर्वच जण त्याबाबत हतबल आहोत. </p> -->
+         
+
+        </div>
+      </div>
+    </div>
+  </section>
+</ion-content>
+
+  
+
+
+
+
+

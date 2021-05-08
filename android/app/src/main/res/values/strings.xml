@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">TaskForce</string>
+    <string name="title_activity_main">TaskForce</string>
+    <string name="package_name">io.taskForce.blog</string>
+    <string name="custom_url_scheme">io.taskForce.blog</string>
+</resources>
